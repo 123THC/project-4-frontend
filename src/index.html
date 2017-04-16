@@ -1,13 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="oddJob">
   <head>
+    <base href="/">
     <meta charset="utf-8">
-    <title>Angular Stack Setup</title>
+    <title>Odd Job</title>
     <!-- inject:js -->
     <!-- endinject -->
     <!-- inject:css -->
     <!-- endinject -->
   </head>
   <body>
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <ul class="nav navbar-nav">
+          <li><a ui-sref="jobsIndex">Jobs</a></li>
+          <li><a ui-sref="jobsNew">Post a Job</a></li>
+        </ul>
+      </div>
+    </nav>
+    <main ui-view></main>
   </body>
 </html>
