@@ -1,11 +1,8 @@
 <!DOCTYPE html>
 
 <div class="row">
-    <div ng-repeat="job in jobsIndex.all" class="col-md-4 jobBox">
-    <a ui-sref="jobsShow({ id: job.id })"><h2>{{ job.title }}</h2></a>
+  <div ng-repeat="job in jobsIndex.all" class="col-md-4 jobBox">
     <img ng-src="{{ job.image_src }}">
-    <p>{{ job.description }}</p>
-    <p>£{{ job.hourly_rate }} p/h</p>
-    <p>Job Posted By: {{ job.postedBy }}</p>
+    <a ui-sref="jobsShow({ id: job.id })"><h4>{{ job.title }}</h4></a>
   </div>
 </div>

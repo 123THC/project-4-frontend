@@ -42,6 +42,18 @@
     <input type="currency" class="form-control" placeholder="£p/h" ng-model="jobsEdit.job.hourly_rate">
   </div>
 
+  <!-- Create a check box rather than a drop down menu BUT before that create the categories themselves -->
+<!--
+  <div class="form-group">
+    <label for="">What Categories does this job fall into?</label>
+    <select ng-model="jobsEdit.job.categories">
+      <option value="1">Home</option>
+      <option value="2">Manual Labour</option>
+      <option value="3">Heavy Lifting</option>
+      <option value="4">Automotive</option>
+    </select>
+  </div> -->
+
   <div class="form-group">
   <label for="base64">Image</label>
   <input type="file" base64 name="base64" id="base64" ng-model="jobsEdit.job.base64">
