@@ -50,7 +50,7 @@ function JobsNewCtrl(Job, $state) {
 
   function jobsCreate() {
     Job
-      .save({ job: vm.bird })
+      .save({ job: vm.job })
       .$promise
       .then(() => $state.go('jobsIndex'));
   }

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<form ng-submit="jobsNew.create()">
+
+  <div class="form-group">
+    <label for="">Job Title</label>
+    <input type="text" class="form-control" ng-model="jobsNew.job.title">
+  </div>
+  <div class="form-group">
+    <label for="">Description</label>
+    <input type="text" class="form-control" ng-model="jobsNew.job.description">
+  </div>
+  <div class="form-group">
+    <label for="">Job Address Line One</label>
+    <input type="text" class="form-control" ng-model="jobsNew.job.address_line1">
+  </div>
+  <div class="form-group">
+    <label for="">Line Two</label>
+    <input type="text" class="form-control" ng-model="jobsNew.job.address_line2">
+  </div>
+  <div class="form-group">
+    <label for="">Line Three</label>
+    <input type="text" class="form-control" ng-model="jobsNew.job.address_line3">
+  </div>
+  <div class="form-group">
+    <label for="">Post Code</label>
+    <input type="text" class="form-control" ng-model="jobsNew.job.address_line4">
+  </div>
+  <div class="form-group">
+    <label for="">When does the Job need to be done?</label>
+    <input type="date" class="form-control" ng-model="jobsNew.job.date">
+  </div>
+  <div class="form-group">
+    <label for="">Hourly rate you are offering</label>
+    <input type="currency" class="form-control" placeholder="£p/h" ng-model="jobsNew.job.hourly_rate">
+  </div>
+
+  <button class="btn btn-primary">Post Job</button>
+</form>
