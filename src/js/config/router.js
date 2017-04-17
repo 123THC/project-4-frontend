@@ -23,7 +23,7 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
       controller: 'JobsShowCtrl as jobsShow'
     })
     .state('jobsEdit', {
-      url: 'jobs/:id/edit',
+      url: '/jobs/:id/edit',
       templateUrl: 'js/views/jobs/edit.html',
       controller: 'JobsEditCtrl as jobsEdit'
     })

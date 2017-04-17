@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <form ng-submit="jobsNew.create()">
-  
+
   <div class="form-group">
     <label for="">Job Title</label>
     <input type="text" class="form-control" ng-model="jobsNew.job.title">
@@ -34,6 +34,10 @@
     <label for="">Hourly rate you are offering</label>
     <input type="currency" class="form-control" placeholder="£p/h" ng-model="jobsNew.job.hourly_rate">
   </div>
+  <!-- <div class="form-group">
+  <label for="base64">Image</label>
+  <input type="file" base64 name="base64" id="base64" ng-model="jobsNew.job.base64">
+  </div> -->
 
   <button class="btn btn-primary">Post Job</button>
 </form>
