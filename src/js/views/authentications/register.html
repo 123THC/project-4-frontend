@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<h1>Register</h1>
+<form ng-submit="login.register()">
+  <div class="form-group">
+    <label>Username</label>
+    <input type="text" name="username" id="username" ng-model="login.user.username" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label>Email</label>
+    <input type="text" name="email" id="email" ng-model="login.user.email" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label for="base64">Profile Picture</label>
+    <input type="file" base64 name="base64" id="base64" ng-model="login.user.base64">
+  </div>
+
+  <div class="form-group">
+    <label>Address Line 1</label>
+    <input type="text" name="address_line1" id="address_line1" ng-model="login.user.address_line1" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label>Address Line 2</label>
+    <input type="text" name="address_line2" id="address_line2" ng-model="login.user.address_line2" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label>Address Line 3</label>
+    <input type="text" name="address_line3" id="address_line3" ng-model="login.user.address_line3" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label>Postcode</label>
+    <input type="text" name="address_line4" id="address_line4" ng-model="login.user.address_line4" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label>Password</label>
+    <input type="password" name="password" id="password" ng-model="login.user.password" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label>Password Confirmation</label>
+    <input type="password" name="password_confirmation" id="password_confirmation" ng-model="login.user.password_confirmation" class="form-control">
+  </div>
+
+  <button class="btn btn-primary">Register</button>
+</form>

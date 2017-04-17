@@ -26,6 +26,16 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
       url: 'jobs/:id/edit',
       templateUrl: 'js/views/jobs/edit.html',
       controller: 'JobsEditCtrl as jobsEdit'
+    })
+    .state('login', {
+      url: '/login',
+      templateUrl: 'js/views/authentications/login.html',
+      controller: 'LoginCtrl as login'
+    })
+    .state('register', {
+      url: '/register',
+      templateUrl: 'js/views/authentications/register.html',
+      controller: 'LoginCtrl as login'
     });
 
     $urlRouterProvider.otherwise('/jobs');
