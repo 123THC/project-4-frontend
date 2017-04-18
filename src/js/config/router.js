@@ -7,6 +7,9 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
   $locationProvider.html5Mode(true);
 
   $stateProvider
+    .state('home', {
+      url: '/'
+    })
     .state('jobsIndex', {
       url: '/jobs',
       templateUrl: 'js/views/jobs/index.html',
@@ -38,5 +41,5 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
       controller: 'LoginCtrl as login'
     });
 
-    $urlRouterProvider.otherwise('/jobs');
+    $urlRouterProvider.otherwise('/');
 }
