@@ -6,7 +6,11 @@
 <p><em>£{{ jobsShow.job.hourly_rate }} p/h</em></p>
 <p>Job Posted By: {{ jobsShow.job.postedBy }}</p>
 
-
+<div class="categoryDisplay">
+  <ul>
+    <li ng-repeat="category in jobsShow.job.categories">{{ category.name }} <img ng-src="{{ category.image }}"></li>
+  </ul>
+</div>
 
 
 <a ui-sref="jobsEdit({ id: jobsShow.job.id })" class="btn btn-primary">Edit Job</a>

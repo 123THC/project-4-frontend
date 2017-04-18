@@ -12,11 +12,12 @@ function JobsIndexCtrl(Job) {
   vm.all = Job.query();
 }
 
-JobsShowCtrl.$inject = ['Job', '$stateParams', '$state'];
-function JobsShowCtrl(Job, $stateParams, $state) {
+JobsShowCtrl.$inject = ['Job', '$stateParams', '$state', 'Category'];
+function JobsShowCtrl(Job, $stateParams, $state, Category) {
   const vm = this;
 
   vm.job = Job.get($stateParams);
+  vm.categories = Category.query();
 
   function jobsDelete() {
     vm.job
