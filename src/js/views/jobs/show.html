@@ -1,21 +1,22 @@
 <!DOCTYPE html>
+<div class="container">
+  <h2>{{ jobsShow.job.title }}</h2>
+  <img ng-src="{{ jobsShow.job.image_src }}">
+  <p>{{jobsShow.job.description }}</p>
+  <p>£{{ jobsShow.job.hourly_rate }} p/h</p>
+  <p>Job Posted By: {{ jobsShow.job.postedBy }}</p>
 
-<h2>{{ jobsShow.job.title }}</h2>
-<img ng-src="{{ jobsShow.job.image_src }}">
-<p>{{jobsShow.job.description }}</p>
-<p>£{{ jobsShow.job.hourly_rate }} p/h</p>
-<p>Job Posted By: {{ jobsShow.job.postedBy }}</p>
+  <div class="categoryDisplay">
+    <ul>
+      <li ng-repeat="category in jobsShow.job.categories">{{ category.name }} <img ng-src="{{ category.image }}"></li>
+    </ul>
+  </div>
 
-<div class="categoryDisplay">
-  <ul>
-    <li ng-repeat="category in jobsShow.job.categories">{{ category.name }} <img ng-src="{{ category.image }}"></li>
-  </ul>
+  <!-- Sort out the applicants applying -->
+  <!-- <button ng-click="jobsShow.toggleApplied()" ng-if="!jobsShow.hasApplied() && main.isAuthenticated()">Attend</button>
+  <button ng-click="jobsShow.toggleApplied()" ng-if="jobsShow.hasApplied() && main.isAuthenticated()">Withdraw Application</button> -->
+
+
+  <a ui-sref="jobsEdit({ id: jobsShow.job.id })" class="btn btn-primary">Edit Job</a>
+  <button ng-click="jobsShow.delete()" class="btn btn-danger">Delete Job</button>
 </div>
-
-<!-- Sort out the applicants applying -->
-<!-- <button ng-click="jobsShow.toggleApplied()" ng-if="!jobsShow.hasApplied() && main.isAuthenticated()">Attend</button>
-<button ng-click="jobsShow.toggleApplied()" ng-if="jobsShow.hasApplied() && main.isAuthenticated()">Withdraw Application</button> -->
-
-
-<a ui-sref="jobsEdit({ id: jobsShow.job.id })" class="btn btn-primary">Edit Job</a>
-<button ng-click="jobsShow.delete()" class="btn btn-danger">Delete Job</button>
