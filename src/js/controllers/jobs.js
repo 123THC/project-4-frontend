@@ -5,10 +5,10 @@ angular
   .controller('JobsEditCtrl', JobsEditCtrl)
   .controller('JobsNewCtrl', JobsNewCtrl);
 
-JobsIndexCtrl.$inject = ['Job'];
-function JobsIndexCtrl(Job) {
+JobsIndexCtrl.$inject = ['Job', 'Category'];
+function JobsIndexCtrl(Job, Category) {
   const vm = this;
-
+  vm.categories = Category.query();
   vm.all = Job.query();
 }
 
@@ -27,6 +27,7 @@ function JobsShowCtrl(Job, $stateParams, $state, Category) {
 
   vm.delete = jobsDelete;
 }
+
 
 JobsEditCtrl.$inject = ['Job', '$stateParams', '$state', 'Category'];
 function JobsEditCtrl(Job, $stateParams, $state, Category) {
