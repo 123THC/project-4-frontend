@@ -3,40 +3,45 @@
 <form ng-submit="jobsNew.create()">
 
   <div class="form-group">
-    <label for="">Job Title</label>
+    <label>Job Title</label>
     <input type="text" class="form-control" ng-model="jobsNew.job.title">
   </div>
   <div class="form-group">
-    <label for="">Description</label>
+    <label>Description</label>
     <input type="text" class="form-control" ng-model="jobsNew.job.description">
   </div>
   <div class="form-group">
-    <label for="">Job Address Line One</label>
+    <label>Job Address Line One</label>
     <input type="text" class="form-control" ng-model="jobsNew.job.address_line1">
   </div>
   <div class="form-group">
-    <label for="">Line Two</label>
+    <label>Line Two</label>
     <input type="text" class="form-control" ng-model="jobsNew.job.address_line2">
   </div>
   <div class="form-group">
-    <label for="">Line Three</label>
+    <label>Line Three</label>
     <input type="text" class="form-control" ng-model="jobsNew.job.address_line3">
   </div>
   <div class="form-group">
-    <label for="">Post Code</label>
+    <label>Post Code</label>
     <input type="text" class="form-control" ng-model="jobsNew.job.address_line4">
   </div>
   <div class="form-group">
-    <label for="">When does the Job need to be done?</label>
+    <label>When does the Job need to be done?</label>
     <input type="date" class="form-control" ng-model="jobsNew.job.date">
   </div>
   <div class="form-group">
-    <label for="">Hourly rate you are offering</label>
+    <label>Hourly rate you are offering</label>
     <input type="currency" class="form-control" placeholder="£p/h" ng-model="jobsNew.job.hourly_rate">
   </div>
   <div class="form-group">
   <label for="base64">Cover Photo for the job</label>
   <input type="file" base64 name="base64" id="base64" ng-model="jobsNew.job.base64">
+  </div>
+  <div class="form-group">
+    <label>What Categories does this job fall into?</label>
+    <label ng-repeat="category in jobsNew.categories">
+    <input type="checkbox" name="categories" checklist-model="jobsNew.job.category_ids" checklist-value="category.id">{{ category.name }}</label>
   </div>
 
   <button class="btn btn-primary">Post Job</button>

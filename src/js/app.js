@@ -1,3 +1,3 @@
 angular
-  .module('oddJob', ['ui.router', 'ngResource', 'satellizer'])
+  .module('oddJob', ['ui.router', 'ngResource', 'satellizer', 'checklist-model'])
   .constant('API_URL', 'http://localhost:3000/api');

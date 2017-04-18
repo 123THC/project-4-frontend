@@ -27,10 +27,11 @@ function JobsShowCtrl(Job, $stateParams, $state) {
   vm.delete = jobsDelete;
 }
 
-JobsEditCtrl.$inject = ['Job', '$stateParams', '$state'];
-function JobsEditCtrl(Job, $stateParams, $state) {
+JobsEditCtrl.$inject = ['Job', '$stateParams', '$state', 'Category'];
+function JobsEditCtrl(Job, $stateParams, $state, Category) {
   const vm = this;
 
+  vm.categories = Category.query();
   vm.job = Job.get($stateParams);
 
   function jobsUpdate() {
@@ -42,10 +43,11 @@ function JobsEditCtrl(Job, $stateParams, $state) {
   vm.update = jobsUpdate;
 }
 
-JobsNewCtrl.$inject = ['Job', '$state'];
-function JobsNewCtrl(Job, $state) {
+JobsNewCtrl.$inject = ['Job', '$state', 'Category'];
+function JobsNewCtrl(Job, $state, Category) {
   const vm = this;
 
+  vm.categories = Category.query();
   vm.job = {};
 
   function jobsCreate() {

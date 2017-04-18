@@ -3,56 +3,50 @@
 <form ng-submit="jobsEdit.update()">
 
   <div class="form-group">
-    <label for="">Job Title</label>
+    <label>Job Title</label>
     <input type="text" class="form-control" ng-model="jobsEdit.job.title">
   </div>
 
   <div class="form-group">
-    <label for="">Description</label>
+    <label>Description</label>
     <input type="text" class="form-control" ng-model="jobsEdit.job.description">
   </div>
 
   <div class="form-group">
-    <label for="">Job Address Line One</label>
+    <label>Job Address<br>Street Name and Number</label>
     <input type="text" class="form-control" ng-model="jobsEdit.job.address_line1">
   </div>
 
   <div class="form-group">
-    <label for="">Line Two</label>
+    <label>Town</label>
     <input type="text" class="form-control" ng-model="jobsEdit.job.address_line2">
   </div>
 
   <div class="form-group">
-    <label for="">Line Three</label>
+    <label>City</label>
     <input type="text" class="form-control" ng-model="jobsEdit.job.address_line3">
   </div>
 
   <div class="form-group">
-    <label for="">Post Code</label>
+    <label>Post Code</label>
     <input type="text" class="form-control" ng-model="jobsEdit.job.address_line4">
   </div>
 
   <div class="form-group">
-    <label for="">When does the Job need to be done?</label>
+    <label>When does the Job need to be done?</label>
     <input type="date" class="form-control" ng-model="jobsEdit.job.date">
   </div>
 
   <div class="form-group">
-    <label for="">Hourly rate you are offering</label>
+    <label>Hourly rate you are offering</label>
     <input type="currency" class="form-control" placeholder="£p/h" ng-model="jobsEdit.job.hourly_rate">
   </div>
 
-  <!-- Create a check box rather than a drop down menu BUT before that create the categories themselves -->
-<!--
   <div class="form-group">
-    <label for="">What Categories does this job fall into?</label>
-    <select ng-model="jobsEdit.job.categories">
-      <option value="1">Home</option>
-      <option value="2">Manual Labour</option>
-      <option value="3">Heavy Lifting</option>
-      <option value="4">Automotive</option>
-    </select>
-  </div> -->
+    <label>What Categories does this job fall into?</label>
+    <label ng-repeat="category in jobsEdit.categories">
+    <input type="checkbox" name="categories" checklist-model="jobsEdit.job.category_ids" checklist-value="category.id">{{ category.name }}</label>
+  </div>
 
   <div class="form-group">
   <label for="base64">Image</label>
