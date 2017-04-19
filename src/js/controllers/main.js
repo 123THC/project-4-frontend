@@ -19,7 +19,7 @@ function MainCtrl($rootScope, $state, $auth) {
     if($auth.getPayload()) vm.currentUser = $auth.getPayload();
   });
 
-  const protectedStates = ['jobsNew', 'jobsEdit'];
+  const protectedStates = ['jobsNew', 'jobsEdit', 'usersNew', 'usersEdit'];
 
   $rootScope.$on('$stateChangeStart', (e, toState) => {
     if((!$auth.isAuthenticated() && protectedStates.includes(toState.name))) {

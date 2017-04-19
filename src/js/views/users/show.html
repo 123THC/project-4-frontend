@@ -1,9 +1,21 @@
 <!DOCTYPE html>
 
 <div class="container">
-  <img ng-src="{{ usersShow.user.image_src }}" alt="profile picture">
+  <img class="profilePic" ng-src="{{ usersShow.user.image_src }}" alt="profile picture">
   <h2>{{ usersShow.user.username }}</h2>
-  <h4>Jobs Posted: {{ usersShow.user.jobs_posted }}</h4>
-  <h4>Jobs applied for: {{ usersShow.user.jobs_applied_for }}</h4>
-  <h4>Jobs to do: {{ usersShow.user.jobs_to_do }}</h4>
+  <h4>Jobs Posted:</h4>
+    <ul>
+      <li ng-repeat="jobsPosted in usersShow.user.jobs_posted">{{ jobsPosted.title }}</li>
+    </ul>
+  <h4>Jobs applied for:</h4>
+  <ul>
+    <li ng-repeat="jobsApplied in usersShow.user.jobs_applied_for">{{ jobsApplied.title }}</li>
+  </ul>
+  <h4>Jobs to do:</h4>
+  <ul>
+    <li ng-repeat="jobsToDo in usersShow.user.jobs_to_do">{{ jobsToDo.title }}</li>
+  </ul>
+
+  <a ui-sref="usersEdit({ id: usersShow.user.id })" class="btn btn-primary">Edit Your Profile</a><br>
+  <button ng-click="usersShow.delete()" class="btn btn-danger">Delete Your Profile</button>
 </div>
