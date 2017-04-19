@@ -12,7 +12,7 @@
     <input type="password" ng-model="login.credentials.password" class="form-control">
   </div>
 
-  <button>Login</button>
+  <button class="btn btn-primary">Login</button>
 </form>
 
-<button ng-click="login.authenticate('github')">Login with Github</button>
+<img class="githublogin" ng-click="login.authenticate('github')" ng-src="images/githublogin.png" alt="githublogo">
