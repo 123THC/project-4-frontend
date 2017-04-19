@@ -14,7 +14,7 @@
 
   <h4>Current Applicant Pool</h4>
   <ul>
-    <li ng-repeat="applicant in jobsShow.job.applicants"><a class="profileViewPool" ui-sref="usersShow({ id: applicant.id })">{{ applicant.username }}</a><button class="btn btn-primary">Accept {{applicant.username }} to {{ jobsShow.job.title }}</button></li>
+    <li ng-repeat="applicant in jobsShow.job.applicants"><a class="profileViewPool" ui-sref="usersShow({ id: applicant.id })">{{ applicant.username }}</a><button ng-if="main.currentUser.id == jobsShow.job.id" class="btn btn-primary">Accept {{applicant.username }} to {{ jobsShow.job.title }}</button></li>
   </ul>
 
   <button class="btn btn-primary" ng-click="jobsShow.toggleApplied()" ng-if="!jobsShow.hasApplied() && main.isAuthenticated()">Apply For Job</button><br>

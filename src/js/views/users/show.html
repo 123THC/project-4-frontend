@@ -9,7 +9,7 @@
     </ul>
   <h4>Jobs applied for:</h4>
   <ul>
-    <li ng-repeat="jobsApplied in usersShow.user.jobs_applied_for">{{ jobsApplied.title }}</li>
+    <li ng-repeat="jobsApplied in usersShow.user.jobs_applied_for"><a ui-sref="jobsShow({ id: jobsApplied.id })">{{ jobsApplied.title }}</a></li>
   </ul>
   <h4>Jobs to do:</h4>
   <ul>
