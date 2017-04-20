@@ -5,7 +5,7 @@ body {
 
 .jobBox {
   border-radius: 4px;
-  box-shadow: 8px 8px 5px #888888;
+  box-shadow: 0 0 15px 0 rgba(0,0,0,0.3);
   width: 300px;
   height: 280px;
   text-align: center;
@@ -25,6 +25,20 @@ img.displayImage {
   float: right;
   margin-right: -15px;
   margin-bottom: 20px;
+}
+
+.displayImageCategoryIcon {
+  height: 40%;
+  width: 40%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -70%);
+  position: absolute;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 50px;
+  background-color: rgba(0,0,0,0.3);
+  border-radius: 50%;
 }
 
 .displayTitle {
@@ -117,8 +131,23 @@ li {
   margin-top: 60px;
   border-radius: 4px;
   width: 70%;
-  margin-left: 5%;
+  margin-left: 10%;
   text-indent: 10px;
   border-style: none;
   height: 35px;
+}
+
+.categorySearch {
+  margin-left: 12%;
+  margin-top: 20px;
+  h4 {
+    font-size: 15px;
+    margin-top: 20%;
+  } label {
+    font-size: 13px;
+    display: block;
+    padding-top: 5px;
+    margin-left: 10px;
+  }
+
 }

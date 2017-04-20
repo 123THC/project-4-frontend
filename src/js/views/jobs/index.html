@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <div class="search">
   <input class="searchBox" type="search" placeholder="Search...">
+  <div class="categorySearch">
+    <h4>Select Categories</h4>
+    <label ng-repeat="category in jobsIndex.categories">
+    <input class="listOfCategories" type="checkbox" name="categories" checklist-model="jobsIndex.job.category_ids" checklist-value="category.id">  {{ category.name }}</label>
+  </div>
 </div>
 <div class="container">
   <div class="row">
     <div ng-repeat="job in jobsIndex.all" class="col-md-3 jobBox">
       <img class="displayImage" ng-src="{{ job.image_src }}">
+      <div class="displayImageCategoryIcon" ng-style="{ 'background-image': 'url({{ job.categories[0].image }})' }"></div>
       <div class="displayTitle">
         <a ui-sref="jobsShow({ id: job.id })"><h4>{{ job.title }}</h4><h6>{{ job.address_line3 }}</h6></a>
       </div>
