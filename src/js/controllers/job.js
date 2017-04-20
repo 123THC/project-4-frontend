@@ -3,7 +3,8 @@ angular
   .controller('JobsIndexCtrl', JobsIndexCtrl)
   .controller('JobsShowCtrl', JobsShowCtrl)
   .controller('JobsEditCtrl', JobsEditCtrl)
-  .controller('JobsNewCtrl', JobsNewCtrl);
+  .controller('JobsNewCtrl', JobsNewCtrl)
+  .controller('JobsSelectionCtrl', JobsSelectionCtrl);
 
 JobsIndexCtrl.$inject = ['Job', 'Category'];
 function JobsIndexCtrl(Job, Category) {
@@ -88,4 +89,27 @@ function JobsNewCtrl(Job, $state, Category) {
   }
 
   vm.create = jobsCreate;
+}
+
+JobsSelectionCtrl.$inject = ['Job', '$state', '$stateParams', '$auth', 'User'];
+function JobsSelectionCtrl(Job, $state, $stateParams, $auth, User) {
+const vm = this;
+
+vm.job = Job.get({ id: $stateParams.id });
+
+User.get({ id: $stateParams.userid })
+  .$promise
+  .then(user => vm.chosenApplicant = user);
+
+function selectApplicant() {
+
+  vm.job.chosen_applicant = vm.chosenApplicant;
+  vm.job.chosen_applicant_id = vm.chosenApplicant.id;
+
+  Job.update({ id: vm.job.id, job: vm.job })
+    .$promise
+    .then(() => $state.reload());
+}
+
+vm.selectApplicant = selectApplicant;
 }
