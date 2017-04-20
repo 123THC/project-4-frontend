@@ -49,7 +49,7 @@ function JobsShowCtrl(Job, $stateParams, $state, Category, $auth, User) {
 
   vm.toggleApplied = toggleApplied;
 
-// this checks if there is a user logged in with a session token and if the job has loaded on the page so we can check it for the array of people attending and then check if that array includes the current user id ie. are you already attending.
+// this checks if there is a user logged in with a session token and if the job has loaded on the page so we can check it for the array of people applying and then check if that array includes the current user id ie. are you already applying for this job.
   function hasApplied() {
     return $auth.getPayload() && vm.job.$resolved && vm.job.applicant_ids.includes(vm.currentUser.id);
   }

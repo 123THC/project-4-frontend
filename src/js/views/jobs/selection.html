@@ -1,0 +1,8 @@
+<!DOCTYPE html>
+
+<h1>Job: {{ chooseApplicant.job.title }}</h1>
+<h1>Pay: £{{ chooseApplicant.job.hourly_rate }}p/h</h1>
+
+<h1>Applicant: {{ chooseApplicant.chosenApplicant.data.username }}</h1>
+<img class="profilePic" ng-src="{{ chooseApplicant.chosenApplicant.data.image_src }}">
+<button ng-click="chooseApplicant.selectApplicant()" class="btn btn-primary">Confirm Job</button>

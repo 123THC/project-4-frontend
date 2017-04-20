@@ -5,7 +5,7 @@
   <h2>{{ usersShow.user.username }}</h2>
   <h4>Jobs Posted:</h4>
     <ul>
-      <li ng-repeat="jobsPosted in usersShow.user.jobs_posted">{{ jobsPosted.title }}</li>
+      <li ng-repeat="jobsPosted in usersShow.user.jobs_posted"><a ui-sref="jobsShow({ id: jobsPosted.id })">{{ jobsPosted.title }}</a></li>
     </ul>
   <h4>Jobs applied for:</h4>
   <ul>
@@ -13,7 +13,7 @@
   </ul>
   <h4>Jobs to do:</h4>
   <ul>
-    <li ng-repeat="jobsToDo in usersShow.user.jobs_to_do">{{ jobsToDo.title }}</li>
+    <li ng-repeat="jobsToDo in usersShow.user.jobs_to_do"><a ui-sref="jobsShow({ id: jobsToDo.id })">{{ jobsToDo.title }}</a></li>
   </ul>
 
   <a ui-sref="usersEdit({ id: usersShow.user.id })" class="btn btn-primary">Edit Your Profile</a><br>
