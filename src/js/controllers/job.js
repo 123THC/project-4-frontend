@@ -4,7 +4,54 @@ angular
   .controller('JobsShowCtrl', JobsShowCtrl)
   .controller('JobsEditCtrl', JobsEditCtrl)
   .controller('JobsNewCtrl', JobsNewCtrl)
-  .controller('JobsSelectionCtrl', JobsSelectionCtrl);
+  .controller('JobsSelectionCtrl', JobsSelectionCtrl)
+  .controller('PaymentController', PaymentController);
+
+PaymentController.$inject = ['$http', 'API_URL'];
+function PaymentController($http, API_URL) {
+  const vm = this;
+
+  vm.card = {};
+  vm.payee = null;
+  vm.amount = null;
+  vm.currency = "gbp";
+  vm.paymentSuccessful = true;
+
+  vm.pay = function() {
+    Stripe.card.createToken(vm.card, function(status, response) {
+      if(status === 200) {
+        var data = {
+          card: vm.card,
+          token: response.id,
+          amount: vm.amount,
+          currency: vm.currency,
+          payee: vm.payee
+        };
+
+        $http
+          .post(API_URL + 'payment', data)
+          .then(function(res) {
+            if(res.status === 200) {
+              vm.paymentSuccessful = true;
+            }
+            else {
+              vm.paymentSuccessful = false;
+            }
+          });
+      }
+    });
+  };
+
+  vm.reset = function() {
+    vm.card = {};
+    vm.payee = "";
+    vm.amount = null;
+    vm.paymentSuccessful = false;
+    vm.Form.$setPristine(true);
+    // use vanilla JS to reset form to remove browser's native autocomplete highlighting
+    document.getElementsByTagName('form')[0].reset();
+  };
+}
 
 JobsIndexCtrl.$inject = ['Job', 'Category', 'filterFilter', 'orderByFilter', '$scope'];
 function JobsIndexCtrl(Job, Category, filterFilter, orderByFilter, $scope) {
@@ -76,7 +123,11 @@ function JobsEditCtrl(Job, $stateParams, $state, Category) {
   const vm = this;
 
   vm.categories = Category.query();
-  vm.job = Job.get($stateParams);
+
+  Job.get($stateParams).$promise.then((job) => {
+    vm.job = job;
+    vm.job.date = new Date(job.date);
+  });
 
   function jobsUpdate() {
     Job.update({ id: vm.job.id, job: vm.job })

@@ -1,5 +1,13 @@
 <!DOCTYPE html>
 
+<form stripe-form="stripeCallback">
+    <input ng-model="number" placeholder="Card Number" />
+    <input ng-model="expiry" placeholder="Expiration" />
+    <input ng-model="cvc" placeholder="CVC" />
+    <button type="submit">Submit</button>
+</form>
+
+
 <h1>Job: {{ jobsSelection.job.title }}</h1>
 <h1>Pay: £{{ jobsSelection.job.hourly_rate }}p/h</h1>
 
