@@ -4,7 +4,7 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-6 summaryBox">
+    <div class="col-md-6 col-xs-12 summaryBox">
       <div class="categoryDisplay">
         <ul>
           <li ng-repeat="category in jobsShow.job.categories">{{ category.name }} <img ng-src="{{ category.image }}"></li>
@@ -14,7 +14,13 @@
         <p>Description: {{jobsShow.job.description }}</p><hr>
         <p>Pay: {{ jobsShow.job.hourly_rate | currency: '£' }} p/h</p><hr>
         <p>Job Posted By: <a ui-sref="usersShow({ id: jobsShow.job.postedById })">{{ jobsShow.job.postedBy }}</a></p><hr>
+        <p>Date: {{ jobsShow.job.date }}</p><hr>
       </div>
+    </div>
+    <div class="col-md-6 col-xs-12">
+      <div class="map">
+
+      </div><hr>
     </div>
   </div>
 

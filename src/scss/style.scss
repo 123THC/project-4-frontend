@@ -168,7 +168,7 @@ select {
 }
 
 .showPagePicture {
-  height: 500px;
+  height: auto;
   width: 100vw;
 }
 
@@ -177,4 +177,10 @@ select {
   li {
     padding: 0;
   }
+}
+
+.map {
+  margin-top: 20%;
+  height: 300px;
+  background-color: yellow;
 }
