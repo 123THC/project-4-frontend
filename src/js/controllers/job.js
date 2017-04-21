@@ -6,12 +6,27 @@ angular
   .controller('JobsNewCtrl', JobsNewCtrl)
   .controller('JobsSelectionCtrl', JobsSelectionCtrl);
 
-JobsIndexCtrl.$inject = ['Job', 'Category'];
-function JobsIndexCtrl(Job, Category) {
+JobsIndexCtrl.$inject = ['Job', 'Category', 'filterFilter', 'orderByFilter', '$scope'];
+function JobsIndexCtrl(Job, Category, filterFilter, orderByFilter, $scope) {
   const vm = this;
   vm.categories = Category.query();
   vm.all = Job.query();
+
+  function filterJob() {
+    if(!vm.q) {
+      vm.filtered = vm.all;
+    } else {
+      const params = vm.q;
+      vm.filtered = filterFilter(vm.all, params);
+      vm.filtered = orderByFilter(vm.filtered, vm.sort);
+    }
 }
+$scope.$watchGroup([
+  () => vm.q,
+  () => vm.sort
+], filterJob);
+}
+
 
 JobsShowCtrl.$inject = ['Job', '$stateParams', '$state', 'Category', '$auth', 'User'];
 function JobsShowCtrl(Job, $stateParams, $state, Category, $auth, User) {

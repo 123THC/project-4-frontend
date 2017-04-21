@@ -12,7 +12,7 @@ body {
   margin-right: 30px;
   margin-top: 60px;
   background-color: white;
-  float: right;
+  float: left;
   overflow: hidden;
   a {
     color: #333;
@@ -72,7 +72,6 @@ img.displayImage {
     text-transform: uppercase;
     font-size: 14px;
     line-height: 70px;
-    // padding-top: 20px;
     a {
       line-height: 70px;
       padding: 5px 15px;
@@ -142,7 +141,7 @@ li {
 
 .categorySearch {
   margin-left: 12%;
-  margin-top: 20px;
+  margin-top: 35px;
   h4 {
     font-size: 15px;
     margin-top: 20%;
@@ -152,5 +151,18 @@ li {
     padding-top: 5px;
     margin-left: 10px;
   }
+}
 
+.paySearch {
+  margin-top: 5px;
+  border-radius: 4px;
+  width: 70%;
+  margin-left: 10%;
+  text-indent: 10px;
+  border-style: none;
+  height: 35px;
+}
+
+select {
+  font-family: 'Ubuntu', sans-serif;
 }
