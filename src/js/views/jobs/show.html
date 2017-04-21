@@ -3,7 +3,7 @@
   <h2>{{ jobsShow.job.title }}</h2>
   <img ng-src="{{ jobsShow.job.image_src }}">
   <p>{{jobsShow.job.description }}</p>
-  <p>£{{ jobsShow.job.hourly_rate }} p/h</p>
+  <p>{{ jobsShow.job.hourly_rate | currency: '£' }} p/h</p>
   <p>Job Posted By: <a ui-sref="usersShow({ id: jobsShow.job.postedById })">{{ jobsShow.job.postedBy }}</a></p>
 
   <div class="categoryDisplay">

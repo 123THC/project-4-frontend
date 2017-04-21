@@ -25,6 +25,9 @@ img.displayImage {
   float: right;
   margin-right: -15px;
   margin-bottom: 20px;
+  &:hover {
+    // write something to hide category icon
+  }
 }
 
 .displayImageCategoryIcon {
