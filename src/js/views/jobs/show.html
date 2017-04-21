@@ -1,15 +1,21 @@
 <!DOCTYPE html>
-<div class="container">
-  <h2>{{ jobsShow.job.title }}</h2>
-  <img ng-src="{{ jobsShow.job.image_src }}">
-  <p>{{jobsShow.job.description }}</p>
-  <p>{{ jobsShow.job.hourly_rate | currency: '£' }} p/h</p>
-  <p>Job Posted By: <a ui-sref="usersShow({ id: jobsShow.job.postedById })">{{ jobsShow.job.postedBy }}</a></p>
 
-  <div class="categoryDisplay">
-    <ul>
-      <li ng-repeat="category in jobsShow.job.categories">{{ category.name }} <img ng-src="{{ category.image }}"></li>
-    </ul>
+<img class="showPagePicture" ng-src="{{ jobsShow.job.image_src }}">
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 summaryBox">
+      <div class="categoryDisplay">
+        <ul>
+          <li ng-repeat="category in jobsShow.job.categories">{{ category.name }} <img ng-src="{{ category.image }}"></li>
+        </ul><hr>
+      </div>
+      <div>
+        <p>Description: {{jobsShow.job.description }}</p><hr>
+        <p>Pay: {{ jobsShow.job.hourly_rate | currency: '£' }} p/h</p><hr>
+        <p>Job Posted By: <a ui-sref="usersShow({ id: jobsShow.job.postedById })">{{ jobsShow.job.postedBy }}</a></p><hr>
+      </div>
+    </div>
   </div>
 
   <div ng-if="main.currentUser.id == jobsShow.job.postedById">
