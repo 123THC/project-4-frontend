@@ -35,6 +35,11 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
       templateUrl: 'js/views/jobs/selection.html',
       controller: 'JobsSelectionCtrl as jobsSelection'
     })
+    .state('payment', {
+      url: '/jobs/:id/payment',
+      templateUrl: 'js/views/jobs/payment.html',
+      controller: 'PaymentController as payment'
+    })
     .state('login', {
       url: '/login',
       templateUrl: 'js/views/authentications/login.html',
