@@ -18,18 +18,8 @@
   </div>
 
   <div class="form-group">
-    <label>Address Line 1</label>
-    <input type="text" name="address_line1" id="address_line1" ng-model="login.user.address_line1" class="form-control">
-  </div>
-
-  <div class="form-group">
-    <label>Address Line 2</label>
-    <input type="text" name="address_line2" id="address_line2" ng-model="login.user.address_line2" class="form-control">
-  </div>
-
-  <div class="form-group">
-    <label>Address Line 3</label>
-    <input type="text" name="address_line3" id="address_line3" ng-model="login.user.address_line3" class="form-control">
+    <label for="location">Address</label><br>
+    <input class="form-control" id="location" type="text" name="location" autocomplete ng-model="login.user.address_line1" required>
   </div>
 
   <div class="form-group">
