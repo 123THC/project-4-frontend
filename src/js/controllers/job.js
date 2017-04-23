@@ -36,7 +36,6 @@ function JobsShowCtrl(Job, $stateParams, $state, Category, $auth, User, Comment)
 
   function addComment() {
     vm.comment.job_id = vm.job.id;
-
     Comment
       .save({ comment: vm.comment })
       .$promise
@@ -45,7 +44,6 @@ function JobsShowCtrl(Job, $stateParams, $state, Category, $auth, User, Comment)
         vm.comment = {};
       });
   }
-
   vm.addComment = addComment;
 
   function deleteComment(comment) {
@@ -57,7 +55,6 @@ function JobsShowCtrl(Job, $stateParams, $state, Category, $auth, User, Comment)
         vm.job.comments.splice(index, 1);
       });
   }
-
   vm.deleteComment = deleteComment;
 
   function jobsDelete() {
