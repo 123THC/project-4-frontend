@@ -13,7 +13,6 @@ function JobsIndexCtrl(Job, Category, filterFilter, orderByFilter, $scope) {
   vm.all = Job.query();
 
   function filterJob() {
-    vm.filtered = vm.all;
     const params = vm.q;
     vm.filtered = filterFilter(vm.all, params);
     vm.filtered = orderByFilter(vm.filtered, vm.sort);
@@ -26,14 +25,40 @@ function JobsIndexCtrl(Job, Category, filterFilter, orderByFilter, $scope) {
 }
 
 
-JobsShowCtrl.$inject = ['Job', '$stateParams', '$state', 'Category', '$auth', 'User'];
-function JobsShowCtrl(Job, $stateParams, $state, Category, $auth, User) {
+JobsShowCtrl.$inject = ['Job', '$stateParams', '$state', 'Category', '$auth', 'User', 'Comment'];
+function JobsShowCtrl(Job, $stateParams, $state, Category, $auth, User, Comment) {
   const vm = this;
 
   if ($auth.getPayload()) vm.currentUser = User.get({ id: $auth.getPayload().id });
 
   vm.job = Job.get($stateParams);
   vm.categories = Category.query();
+
+  function addComment() {
+    vm.comment.job_id = vm.job.id;
+
+    Comment
+      .save({ comment: vm.comment })
+      .$promise
+      .then((comment) => {
+        vm.job.comments.push(comment);
+        vm.comment = {};
+      });
+  }
+
+  vm.addComment = addComment;
+
+  function deleteComment(comment) {
+    Comment
+      .delete({ id: comment.id })
+      .$promise
+      .then(() => {
+        const index = vm.job.comments.indexOf(comment);
+        vm.job.comments.splice(index, 1);
+      });
+  }
+
+  vm.deleteComment = deleteComment;
 
   function jobsDelete() {
     vm.job

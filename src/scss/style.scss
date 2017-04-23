@@ -111,8 +111,9 @@ li {
 }
 
 .profileViewPool {
-  margin-right: 50px;
+  margin-right: 10%;
   padding: 10px;
+  display: inline;
 }
 
 .profilePic {
@@ -169,7 +170,7 @@ select {
 }
 
 .showPagePicture {
-  height: auto;
+  height: 75vh;
   width: 100vw;
 }
 
@@ -180,8 +181,21 @@ select {
   }
 }
 
+.categoryShowPage {
+  display: inline;
+  margin-left: -40px;
+  margin-right: 40px;
+}
+
+.ownersViewShowPage {
+  img {
+    height: 60px;
+    width: auto;
+  }
+}
+
 .map {
-  margin-top: 20%;
+  margin-top: 100px;
   height: 300px;
   background-color: yellow;
 }
