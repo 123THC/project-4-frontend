@@ -21,7 +21,8 @@
     "bootstrap-css-only": "^3.3.7",
     "satellizer": "^0.15.5",
     "checklist-model": "^0.11.0",
-    "angular-payments": "*"
+    "angular-payments": "*",
+    "angular-messages": "^1.6.4"
   },
   "resolutions": {
     "angular": "^1.6.4"

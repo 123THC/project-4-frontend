@@ -123,12 +123,13 @@ function JobsNewCtrl(Job, $state, Category) {
   vm.job = {};
 
   function jobsCreate() {
-    Job
-      .save({ job: vm.job })
-      .$promise
-      .then(() => $state.go('jobsIndex'));
-  }
-
+    if(vm.jobsNewForm.$valid) {
+      Job
+        .save({ job: vm.job })
+        .$promise
+        .then(() => $state.go('jobsIndex'));
+    }
+    }
   vm.create = jobsCreate;
 }
 
