@@ -237,6 +237,7 @@ select {
 
 .jobPhotoProfilePage {
   height: auto;
+  margin-top: 25px;
   width: 300px;
   text-align: center;
 }
@@ -264,4 +265,21 @@ body {
 .jobsTitleProfile {
   text-transform: uppercase;
   letter-spacing: 2px;
+}
+
+.userDetailsSelection {
+  margin-top: 50px;
+  height: 300px;
+  background-color: yellow;
+}
+
+.jobDetailsSelection {
+  margin-top: 50px;
+  height: 300px;
+  background-color: pink;
+}
+
+.displayPictureSelection {
+  height: 150px;
+  width: auto;
 }

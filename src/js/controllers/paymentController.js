@@ -42,7 +42,8 @@ function PaymentController(API_URL, $http, $window, $state, $stateParams, Job, U
         token: response.id,
         payee: vm.card.payee,
         amount: vm.card.amount * 100,
-        currency: vm.currency
+        currency: vm.currency,
+        job_id: $stateParams.id
       };
       paymentTransaction(data);
     });
