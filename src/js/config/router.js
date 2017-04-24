@@ -8,7 +8,8 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
 
   $stateProvider
     .state('home', {
-      url: '/'
+      url: '/',
+      templateUrl: 'js/views/jobs/home.html',
     })
     .state('jobsIndex', {
       url: '/jobs',
