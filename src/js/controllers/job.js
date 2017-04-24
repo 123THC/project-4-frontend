@@ -25,7 +25,7 @@ function JobsIndexCtrl(Job, Category, filterFilter, orderByFilter, $scope) {
       return job.categories.find((category) => {
         return vm.filterCategory.find((id) => {
           return id === category.id;
-        })
+        });
       });
     } else {
       return true;
