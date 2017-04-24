@@ -116,11 +116,6 @@ li {
   display: inline;
 }
 
-.profilePic {
-  height: 250px;
-  width: auto;
-}
-
 .search {
   height: 1000px;
   background-color: #D3D3D3;
@@ -214,4 +209,53 @@ select {
 .ngMessages {
   margin-bottom: 10px;
   color: red;
+}
+
+.description {
+  margin-top: 50px;
+}
+
+.details {
+  margin-top: 50px;
+}
+
+.showImage {
+  height: 400px;
+  margin-top: 50px;
+}
+
+.comments {
+  padding-left: 0;
+}
+
+.btn {
+  display: grid;
+}
+
+
+.profilePicture {
+  height: 280px;
+  width: 250px;
+  margin: 50px 100px 50px 100px;
+  background-color: pink;
+}
+
+.userButtons {
+  margin-top: 50px;
+}
+
+.usersJobInfo {
+  min-height: 300px;
+  height: auto;
+  background-color: #ddd;
+  border: 1px solid black;
+  h4 {
+    text-align: center;
+    margin: 15px 0 20px 0;
+  }
+}
+
+.jobPhotoProfilePage {
+  height: 50px;
+  width: auto;
 }

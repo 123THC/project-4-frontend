@@ -7,8 +7,10 @@ function LoginCtrl($auth, $state) {
   const vm = this;
 
   function register() {
-    $auth.signup(vm.user)
-    .then(() => $state.go ('login'));
+    if(vm.registerForm.$valid) {
+      $auth.signup(vm.user)
+      .then(() => $state.go ('login'));
+    }
   }
 
   vm.register = register;
