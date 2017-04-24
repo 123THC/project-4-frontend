@@ -18,14 +18,8 @@
     <div ng-messages="jobsNew.jobsNewForm.description.$error" role="alert">
       <div class="ngMessages" ng-show="(jobsNew.jobsNewForm.description.$touched)" ng-message="required">Please enter a detailed description of the job.</div>
     </div>
-    <!-- <div class="form-group">
-      <label for="location">Where will the job take place?</label><br>
-      <input class="form-control" id="location" type="text" name="location" autocomplete ng-model="jobsNew.job.address_line1" lat="jobsNew.job.lat" lng="jobsNew.job.lng" required>
-    </div>
-    <input type="hidden" ng-model="jobsNew.job.lat" name="lat" value="">
-    <input type="hidden" ng-model="jobsNew.job.lng" name="lng" value=""> -->
     <div class="form-group">
-      <label>Job Address Street Name and Number</label>
+      <label>Street Name and Number</label>
       <input name="street" type="text" class="form-control" ng-model="jobsNew.job.address_line1" required>
     </div>
     <div ng-messages="jobsNew.jobsNewForm.street.$error" role="alert">

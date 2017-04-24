@@ -14,19 +14,19 @@
   </div>
   <div class="row">
     <div class="col-md-4 col-xs-12 usersJobInfo">
-      <h4>Jobs Posted</h4>
+      <h4 class="jobsTitleProfile">Jobs Posted</h4>
       <div>
         <div ng-repeat="jobsPosted in usersShow.user.jobs_posted"><img class="jobPhotoProfilePage" ng-src="{{ jobsPosted.image_src }}" alt="job main photo"><br><a ui-sref="jobsShow({ id: jobsPosted.id })">{{ jobsPosted.title }}</a><br>Number of Applicants: {{ jobsPosted.applicants.length }}</div><br>
       </div>
     </div>
     <div class="col-md-4 col-xs-12 usersJobInfo">
-      <h4>Jobs Applied For</h4>
+      <h4 class="jobsTitleProfile">Jobs Applied For</h4>
       <div>
         <div ng-repeat="jobsApplied in usersShow.user.jobs_applied_for"><img class="jobPhotoProfilePage" ng-src="{{ jobsApplied.image_src }}" alt="job main photo"><br><a ui-sref="jobsShow({ id: jobsApplied.id })">{{ jobsApplied.title }}</a><br></div><br>
       </div>
     </div>
-    <div class="col-md-4 col-xs-12 usersJobInfo">
-      <h4>Jobs To Do</h4>
+    <div id="jobsToDoDiv" class="col-md-4 col-xs-12 usersJobInfo">
+      <h4 class="jobsTitleProfile">Jobs To Do</h4>
       <div>
         <div ng-repeat="jobsToDo in usersShow.user.jobs_to_do"><img class="jobPhotoProfilePage" ng-src="{{ jobsToDo.image_src }}" alt="job main photo"><br><a ui-sref="jobsShow({ id: jobsToDo.id })">{{ jobsToDo.title }}</a><br></div><br>
       </div>
