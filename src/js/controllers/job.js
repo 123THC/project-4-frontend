@@ -38,6 +38,7 @@ function JobsIndexCtrl(Job, Category, filterFilter, orderByFilter, $scope) {
     () => vm.sort
   ], filterJob);
 
+// use a deep watch for the category filter as this is an array that will be changing
   $scope.$watch(() => vm.filterCategory, filterJob, true);
   filterJob();
 }

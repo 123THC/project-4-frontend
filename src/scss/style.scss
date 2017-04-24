@@ -27,7 +27,7 @@ img.displayImage {
 .displayImageCategoryIcon {
   height: 40%;
   width: 40%;
-  top: 50%;
+  top: 58%;
   left: 50%;
   transform: translate(-50%, -70%);
   position: absolute;
@@ -225,10 +225,10 @@ select {
 }
 
 .usersJobInfo {
-  min-height: 300px;
-  height: auto;
-  background-color: #ddd;
-  border: 1px solid black;
+  height: 400px;
+  overflow: scroll;
+  border-right: 1px solid black;
+  text-align: center;
   h4 {
     text-align: center;
     margin: 15px 0 20px 0;
@@ -236,8 +236,9 @@ select {
 }
 
 .jobPhotoProfilePage {
-  height: 50px;
-  width: 75px;
+  height: auto;
+  width: 300px;
+  text-align: center;
 }
 
 .topLineForm {
@@ -250,4 +251,8 @@ body {
       width: auto;
     }
   }
+}
+
+.col-md-3 {
+  width: 22%;
 }
