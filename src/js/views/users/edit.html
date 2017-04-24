@@ -1,39 +1,41 @@
 <!DOCTYPE html>
+<div class="container">
+  <form ng-submit="usersEdit.update()">
+    <div class="form-group">
+      <label>Username</label>
+      <input type="text" class="form-control" ng-model="usersEdit.user.username">
+    </div>
+    <div class="form-group">
+      <label>Email</label>
+      <input type="text" name="email" id="email" ng-model="usersEdit.user.email" class="form-control">
+    </div>
 
-<form ng-submit="usersEdit.update()">
-  <div class="form-group">
-    <label>Username</label>
-    <input type="text" class="form-control" ng-model="usersEdit.user.username">
-  </div>
-  <div class="form-group">
-    <label>Email</label>
-    <input type="text" name="email" id="email" ng-model="usersEdit.user.email" class="form-control">
-  </div>
+    <div class="form-group">
+      <label for="base64">Profile Picture</label>
+      <input type="file" base64 name="base64" id="base64" ng-model="usersEdit.user.base64">
+    </div>
 
-  <div class="form-group">
-    <label for="base64">Profile Picture</label>
-    <input type="file" base64 name="base64" id="base64" ng-model="usersEdit.user.base64">
-  </div>
+    <div class="form-group">
+      <label>House Number and Street Name</label>
+      <input type="text" name="address_line1" id="address_line1" ng-model="usersEdit.user.address_line1" class="form-control" placeholder="Leave blank to keep the same">
+    </div>
 
-  <div class="form-group">
-    <label>House Number and Street Name</label>
-    <input type="text" name="address_line1" id="address_line1" ng-model="usersEdit.user.address_line1" class="form-control" placeholder="Leave blank to keep the same">
-  </div>
+    <div class="form-group">
+      <label>Town</label>
+      <input type="text" name="address_line2" id="address_line2" ng-model="usersEdit.user.address_line2" class="form-control" placeholder="Leave blank to keep the same">
+    </div>
 
-  <div class="form-group">
-    <label>Town</label>
-    <input type="text" name="address_line2" id="address_line2" ng-model="usersEdit.user.address_line2" class="form-control" placeholder="Leave blank to keep the same">
-  </div>
+    <div class="form-group">
+      <label>City</label>
+      <input type="text" name="address_line3" id="address_line3" ng-model="usersEdit.user.address_line3" class="form-control" placeholder="Leave blank to keep the same">
+    </div>
 
-  <div class="form-group">
-    <label>City</label>
-    <input type="text" name="address_line3" id="address_line3" ng-model="usersEdit.user.address_line3" class="form-control" placeholder="Leave blank to keep the same">
-  </div>
+    <div class="form-group">
+      <label>Postcode</label>
+      <input type="text" name="address_line4" id="address_line4" ng-model="usersEdit.user.address_line4" class="form-control" placeholder="Leave blank to keep the same">
+    </div>
 
-  <div class="form-group">
-    <label>Postcode</label>
-    <input type="text" name="address_line4" id="address_line4" ng-model="usersEdit.user.address_line4" class="form-control" placeholder="Leave blank to keep the same">
-  </div>
+    <button class="btn btn-primary">Update Your Profile</button>
+  </form>
 
-  <button class="btn btn-primary">Update Your Profile</button>
-</form>
+</div>
