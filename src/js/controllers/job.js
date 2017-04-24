@@ -107,9 +107,11 @@ function JobsEditCtrl(Job, $stateParams, $state, Category) {
   });
 
   function jobsUpdate() {
-    Job.update({ id: vm.job.id, job: vm.job })
-    .$promise
-    .then(() => $state.go('jobsShow', $stateParams));
+    if(vm.jobsEditForm.$valid) {
+      Job.update({ id: vm.job.id, job: vm.job })
+      .$promise
+      .then(() => $state.go('jobsShow', $stateParams));
+    }
   }
 
   vm.update = jobsUpdate;
@@ -129,7 +131,7 @@ function JobsNewCtrl(Job, $state, Category) {
         .$promise
         .then(() => $state.go('jobsIndex'));
     }
-    }
+  }
   vm.create = jobsCreate;
 }
 
