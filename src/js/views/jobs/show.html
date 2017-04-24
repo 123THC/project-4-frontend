@@ -2,8 +2,8 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-12">
-      <img class="showImage container" ng-src="{{ jobsShow.job.image_src }}">
+    <div class="col-md-12 jobsShowImage">
+      <img class="picture-container container" ng-src="{{ jobsShow.job.image_src }}">
     </div>
   </div>
   <div class="row">
@@ -45,7 +45,7 @@
     <div class="col-md-6" ng-if="main.currentUser.id == jobsShow.job.postedById">
       <h4>Current Applicant Pool</h4>
       <ul>
-        <li ng-repeat="applicant in jobsShow.job.applicants"><a ui-sref="usersShow({ id: applicant.id })" class="profileViewPool"><img ng-src="{{ applicant.image_src }}">{{ applicant.username }}</a>
+        <li ng-repeat="applicant in jobsShow.job.applicants"><a ui-sref="usersShow({ id: applicant.id })" class="profileViewPool"><img class="profilePictureJobsShow" ng-src="{{ applicant.image_src }}">{{ applicant.username }}</a>
         <button ui-sref="applicantSelection({ id: jobsShow.job.id, userid: applicant.id })" class="btn btn-primary">Accept {{applicant.username }}</button></li>
       </ul>
       <div>

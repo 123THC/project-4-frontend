@@ -13,7 +13,6 @@ function JobsIndexCtrl(Job, Category, filterFilter, orderByFilter, $scope) {
   vm.all = Job.query();
 
   function filterJob() {
-    console.log('filtering!');
     const params = vm.q;
     vm.filtered = filterFilter(vm.all, params);
     vm.filtered = filterFilter(vm.filtered, categoryFilter);
