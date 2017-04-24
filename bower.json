@@ -2,10 +2,6 @@
   "name": "angular-gulp-setup",
   "description": "A example stack with gulp and angular",
   "main": "index.js",
-  "scripts": {
-    "postinstall": "bower install && gulp deploy",
-    "start": "node index"
-  },
   "authors": [
     "alexpchin <alex@alexchin.co.uk>"
   ],
