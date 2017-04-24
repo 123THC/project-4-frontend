@@ -4,17 +4,18 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-12 col-xs-12 summaryBox">
+    <div class="col-md-6 col-xs-12 summaryBox">
       <div class="categoryDisplay">
+        <p>Description: {{jobsShow.job.description }}</p>
+        <div class="col-md-6">
+          <hr>
+          <p>Pay: {{ jobsShow.job.hourly_rate | currency: '£' }} p/h</p><hr>
+          <p>Job Posted By: <a ui-sref="usersShow({ id: jobsShow.job.postedById })">{{ jobsShow.job.postedBy }}</a></p><hr>
+          <p>Date: {{ jobsShow.job.date }}</p><hr>
+        </div>
         <ul>
           <li class="categoryShowPage" ng-repeat="category in jobsShow.job.categories">{{ category.name }}<img ng-src="{{ category.image }}"></li>
         </ul><hr>
-      </div>
-      <div>
-        <p>Description: {{jobsShow.job.description }}</p><hr>
-        <p>Pay: {{ jobsShow.job.hourly_rate | currency: '£' }} p/h</p><hr>
-        <p>Job Posted By: <a ui-sref="usersShow({ id: jobsShow.job.postedById })">{{ jobsShow.job.postedBy }}</a></p><hr>
-        <p>Date: {{ jobsShow.job.date }}</p><hr>
       </div>
     </div>
   </div>
@@ -29,14 +30,14 @@
       <div class="col-md-6">
         <h4>Comments</h4>
         <ul>
-          <li ng-repeat="comment in jobsShow.job.comments">{{ comment.body }} - <strong>{{ comment.user.username }}</strong><button ng-click="jobsShow.deleteComment(comment)" ng-if="main.isAuthenticated() && main.currentUser.id === comment.user.id">Delete</button></li>
+          <li ng-repeat="comment in jobsShow.job.comments">{{ comment.body }} - <strong>{{ comment.user.username }}</strong><button class="btn btn-danger" ng-click="jobsShow.deleteComment(comment)" ng-if="main.isAuthenticated() && main.currentUser.id === comment.user.id">Delete</button></li>
         </ul>
       </div>
       <div class="col-md-6" ng-if="main.isAuthenticated()">
         <h4>Add Comment</h4>
         <form ng-submit="jobsShow.addComment()">
-          <textarea type="text" name="body" ng-model="jobsShow.comment.body"></textarea>
-          <button>Create</button>
+          <textarea class="commentBox" type="text" name="body" ng-model="jobsShow.comment.body"></textarea>
+          <button class="btn btn-primary">Post Comment</button>
         </form>
       </div>
     </div>

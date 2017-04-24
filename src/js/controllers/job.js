@@ -20,8 +20,10 @@ function JobsIndexCtrl(Job, Category, filterFilter, orderByFilter, $scope) {
 
   $scope.$watchGroup([
     () => vm.q,
+    () => vm.all.$resolved,
     () => vm.sort
   ], filterJob);
+  filterJob();
 }
 
 
