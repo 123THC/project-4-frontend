@@ -6,13 +6,10 @@
 .jobBox {
   border-radius: 4px;
   box-shadow: 0 0 15px 0 rgba(0,0,0,0.3);
-  width: 300px;
   height: 280px;
   text-align: center;
-  margin-right: 30px;
   margin-top: 60px;
   background-color: white;
-  float: left;
   overflow: hidden;
   a {
     color: #333;
@@ -20,11 +17,8 @@
 }
 
 img.displayImage {
-  width: 300px;
+  width: 100%;
   height: 200px;
-  float: right;
-  margin-right: -15px;
-  margin-bottom: 20px;
   &:hover {
     // write something to hide category icon
   }
@@ -45,16 +39,13 @@ img.displayImage {
 }
 
 .displayTitle {
-  margin-top: 50px;
   a {
     box-sizing: border-box;
-    padding: 7px;
+    padding: 10px 15px;
     display: block;
     text-align: left;
-    margin-top: 5px;
 
     h4 {
-      padding-top: 13px;
       font-size: 15px;
     }
     h6 {
@@ -114,16 +105,6 @@ li {
   margin-right: 10%;
   padding: 10px;
   display: inline;
-}
-
-.search {
-  height: 1000px;
-  background-color: #D3D3D3;
-  width: 20%;
-  float: left;
-  margin-top: 0;
-  margin-right: 25px;
-  display: inline-block;
 }
 
 .searchBox {
@@ -257,4 +238,16 @@ select {
 .jobPhotoProfilePage {
   height: 50px;
   width: 75px;
+}
+
+.topLineForm {
+  margin-top: 50px;
+}
+
+body {
+  &.jobsIndex {
+    .container {
+      width: auto;
+    }
+  }
 }

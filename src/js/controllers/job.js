@@ -13,9 +13,23 @@ function JobsIndexCtrl(Job, Category, filterFilter, orderByFilter, $scope) {
   vm.all = Job.query();
 
   function filterJob() {
+    console.log('filtering!');
     const params = vm.q;
     vm.filtered = filterFilter(vm.all, params);
+    vm.filtered = filterFilter(vm.filtered, categoryFilter);
     vm.filtered = orderByFilter(vm.filtered, vm.sort);
+  }
+
+  function categoryFilter(job) {
+    if (vm.filterCategory && vm.filterCategory.length) {
+      return job.categories.find((category) => {
+        return vm.filterCategory.find((id) => {
+          return id === category.id;
+        })
+      });
+    } else {
+      return true;
+    }
   }
 
   $scope.$watchGroup([
@@ -23,6 +37,8 @@ function JobsIndexCtrl(Job, Category, filterFilter, orderByFilter, $scope) {
     () => vm.all.$resolved,
     () => vm.sort
   ], filterJob);
+
+  $scope.$watch(() => vm.filterCategory, filterJob, true);
   filterJob();
 }
 

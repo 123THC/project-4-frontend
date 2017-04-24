@@ -1,31 +1,30 @@
 <!DOCTYPE html>
-<div class="search">
-  <input class="searchBox" type="text" ng-model="jobsIndex.q" placeholder="Search...">
-  <label class="categorySearch">Select the pay range</label>
-  <select class="paySearch" ng-model="jobsIndex.sort">
-    <option  value="hourly_rate">Lowest to Highest</option>
-    <option value="-hourly_rate">Highest to Lowest</option>
-  </select>
-  <div class="categorySearch">
-    <h4>Select Categories</h4>
-    <label ng-repeat="category in jobsIndex.categories">
-    <input class="listOfCategories" type="checkbox" name="categories" checklist-model="jobsIndex.job.category_ids" checklist-value="category.id">  {{ category.name }}</label>
-    <!-- <input type="checkbox" ng-model="jobsIndex.q" value="Home Maintenance"> Home Maintenance<br>
-    <input type="checkbox" ng-model="jobsIndex.q" value="Garden"> Garden<br>
-    <input type="checkbox" ng-model="jobsIndex.q" value="Sales"> Sales<br>
-    <input type="checkbox" ng-model="jobsIndex.q" value="Heavy Lifting"> Heavy Lifting<br>
-    <input type="checkbox" ng-model="jobsIndex.q" value="Maintenance"> Maintenance<br>
-    <input type="checkbox" ng-model="jobsIndex.q" value="High Pay"> High Pay<br>
-    <input type="checkbox" ng-model="jobsIndex.q" value="Cleaning"> Cleaning<br> -->
-  </div>
-</div>
 <div class="container">
   <div class="row">
-    <div ng-repeat="job in jobsIndex.filtered" class="col-md-3 jobBox">
-      <img class="displayImage" ng-src="{{ job.image_src }}">
-      <div class="displayImageCategoryIcon" ng-style="{ 'background-image': 'url({{ job.categories[0].image }})' }"></div>
-      <div class="displayTitle">
-        <a ui-sref="jobsShow({ id: job.id })"><h4>{{ job.title }}</h4><h6>{{ job.address_line3 }}</h6></a>
+    <div class="search col-md-3">
+      <input class="searchBox" type="text" ng-model="jobsIndex.q" placeholder="Search...">
+      <label class="categorySearch">Select the pay range</label>
+      <select class="paySearch" ng-model="jobsIndex.sort">
+        <option  value="hourly_rate">Lowest to Highest</option>
+        <option value="-hourly_rate">Highest to Lowest</option>
+      </select>
+      <div class="categorySearch">
+        <h4>Select Categories</h4>
+        <label ng-repeat="category in jobsIndex.categories">
+        <input class="listOfCategories" type="checkbox" name="categories" checklist-model="jobsIndex.filterCategory" checklist-value="category.id">  {{ category.name }}</label>
+      </div>
+    </div>
+    <div class="jobs col-md-9">
+      <div class="row">
+        <div ng-repeat="job in jobsIndex.filtered" class="col-sm-4">
+          <div class="jobBox">
+            <img class="displayImage" ng-src="{{ job.image_src }}">
+            <div class="displayImageCategoryIcon" ng-style="{ 'background-image': 'url({{ job.categories[0].image }})' }"></div>
+            <div class="displayTitle">
+              <a ui-sref="jobsShow({ id: job.id })"><h4>{{ job.title }}</h4><h6>{{ job.address_line3 }}</h6></a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
