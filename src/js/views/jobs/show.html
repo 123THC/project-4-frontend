@@ -51,7 +51,7 @@
       <div>
         <div ng-if="main.currentUser.id == jobsShow.job.postedById">
           <a ui-sref="jobsEdit({ id: jobsShow.job.id })" class="btn btn-primary">Edit Job</a><br>
-          <button ng-click="jobsShow.delete()" class="btn btn-danger">Delete Job</button>
+          <a ng-click="jobsShow.delete()" class="btn btn-danger">Delete Job</a>
         </div>
       </div>
     </div>
