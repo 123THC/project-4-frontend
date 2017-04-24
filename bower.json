@@ -2,6 +2,10 @@
   "name": "angular-gulp-setup",
   "description": "A example stack with gulp and angular",
   "main": "index.js",
+  "scripts": {
+    "postinstall": "bower install && gulp deploy",
+    "start": "node index"
+  },
   "authors": [
     "alexpchin <alex@alexchin.co.uk>"
   ],
@@ -22,5 +26,8 @@
     "satellizer": "^0.15.5",
     "checklist-model": "^0.11.0",
     "angular-payments": "*"
+  },
+  "resolutions": {
+    "angular": "^1.5.8"
   }
 }

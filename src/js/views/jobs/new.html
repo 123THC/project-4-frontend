@@ -13,8 +13,20 @@
       <input type="text" class="form-control" ng-model="jobsNew.job.description">
     </div>
     <div class="form-group">
-      <label for="location">Where will the job take place?</label><br>
-      <input class="form-control" id="location" type="text" name="location" autocomplete ng-model="jobsNew.job.address_line1" required>
+      <label>Job Address Street Name and Number</label>
+      <input type="text" class="form-control" ng-model="jobsNew.job.address_line1">
+    </div>
+    <div class="form-group">
+      <label>Town</label>
+      <input type="text" class="form-control" ng-model="jobsNew.job.address_line2">
+    </div>
+    <div class="form-group">
+      <label>City</label>
+      <input type="text" class="form-control" ng-model="jobsNew.job.address_line3">
+    </div>
+    <div class="form-group">
+      <label>Post Code</label>
+      <input type="text" class="form-control" ng-model="jobsNew.job.address_line4">
     </div>
     <div class="form-group">
       <label>When does the Job need to be done?</label>
