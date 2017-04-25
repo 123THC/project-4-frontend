@@ -146,10 +146,7 @@ function JobsNewCtrl(Job, $state, Category) {
         .save({ job: vm.job })
         .$promise
         .then(() => $state.go('jobsIndex'))
-        .catch((error) => {
-          console.log(error);
-          $state.go('jobsIndex');
-        });
+        .catch(() => $state.go('jobsIndex'));
     }
   }
   vm.create = jobsCreate;
