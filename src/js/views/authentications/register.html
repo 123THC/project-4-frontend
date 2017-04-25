@@ -23,14 +23,43 @@
       <input type="file" base64 name="base64" id="base64" ng-model="login.user.base64">
     </div>
 
-    <div class="form-group">
+    <!-- <div class="form-group">
       <label for="location">Address</label><br>
       <input class="form-control" id="location" type="text" name="location" autocomplete ng-model="login.user.address_line1" required>
+    </div> -->
+
+    <div class="form-group">
+      <label>Street Name and Number</label>
+      <input name="street" type="text" class="form-control" ng-model="login.user.address_line1" required>
+    </div>
+    <div ng-messages="login.registerForm.street.$error" role="alert">
+      <div class="ngMessages" ng-show="(login.registerForm.street.$touched)" ng-message="required">Please enter your house number and street name.</div>
+    </div>
+    <div class="form-group">
+      <label>Town</label>
+      <input name="town" type="text" class="form-control" ng-model="login.user.address_line2" required>
+    </div>
+    <div ng-messages="login.registerForm.town.$error" role="alert">
+      <div class="ngMessages" ng-show="(login.registerForm.town.$touched)" ng-message="required">Please enter your town.</div>
+    </div>
+    <div class="form-group">
+      <label>City</label>
+      <input name="city" type="text" class="form-control" ng-model="login.user.address_line3" required>
+    </div>
+    <div ng-messages="login.registerForm.city.$error" role="alert">
+      <div class="ngMessages" ng-show="(login.registerForm.city.$touched)" ng-message="required">Please enter your city.</div>
+    </div>
+    <div class="form-group">
+      <label>Post Code</label>
+      <input name="postcode" type="text" class="form-control" ng-model="login.user.address_line4" required>
+    </div>
+    <div ng-messages="login.registerForm.postcode.$error" role="alert">
+      <div class="ngMessages" ng-show="(login.registerForm.postcode.$touched)" ng-message="required">Please enter your postcode.</div>
     </div>
 
     <div class="form-group">
-      <label>Postcode</label>
-      <input type="text" name="address_line4" id="address_line4" ng-model="login.user.address_line4" class="form-control">
+      <label>Town</label>
+      <input type="text" name="address_line3" ng-model="login.user.address_line3" class="form-control">
     </div>
 
     <div class="form-group">
