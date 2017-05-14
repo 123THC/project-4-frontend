@@ -1,77 +1,71 @@
 <!DOCTYPE html>
-<div class="container">
-  <h1>Register</h1>
-  <form name="login.registerForm" ng-submit="login.register()" novalidate>
-    <div class="form-group">
-      <label>Username</label>
-      <input type="text" name="username" id="username" ng-model="login.user.username" class="form-control" required>
-    </div>
-    <div ng-messages="login.registerForm.username.$error" role="alert">
-      <div class="ngMessages" ng-show="(login.registerForm.username.$touched)" ng-message="required">Please enter a username.</div>
-    </div>
+<div class="row">
+  <div class="authenticationForm container col-sm-12">
 
-    <div class="form-group">
-      <label>Email</label>
-      <input type="text" name="email" id="email" ng-model="login.user.email" class="form-control" required>
-    </div>
-    <div ng-messages="login.registerForm.email.$error" role="alert">
-      <div class="ngMessages" ng-show="(login.registerForm.email.$touched)" ng-message="required">Please enter a valid email.</div>
-    </div>
+    <form name="login.registerForm" ng-submit="login.register()" novalidate>
+      <div class="form-group">
+        <label>Choose a Username</label>
+        <input type="text" name="username" id="username" ng-model="login.user.username" class="form-control" required>
+      </div>
 
-    <div class="form-group">
-      <label for="base64">Profile Picture</label>
-      <input type="file" base64 name="base64" id="base64" ng-model="login.user.base64">
-    </div>
+      <div ng-messages="login.registerForm.username.$error" role="alert">
+        <div class="ngMessages" ng-show="(login.registerForm.username.$touched)" ng-message="required">Please enter a username.</div>
+      </div>
 
-    <!-- <div class="form-group">
-      <label for="location">Address</label><br>
-      <input class="form-control" id="location" type="text" name="location" autocomplete ng-model="login.user.address_line1" required>
-    </div> -->
+      <div class="form-group">
+        <label>Email</label>
+        <input type="text" name="email" id="email" ng-model="login.user.email" class="form-control" required>
+      </div>
+      <div ng-messages="login.registerForm.email.$error" role="alert">
+        <div class="ngMessages" ng-show="(login.registerForm.email.$touched)" ng-message="required">Please enter a valid email.</div>
+      </div>
 
-    <div class="form-group">
-      <label>Street Name and Number</label>
-      <input name="street" type="text" class="form-control" ng-model="login.user.address_line1" required>
-    </div>
-    <div ng-messages="login.registerForm.street.$error" role="alert">
-      <div class="ngMessages" ng-show="(login.registerForm.street.$touched)" ng-message="required">Please enter your house number and street name.</div>
-    </div>
-    <div class="form-group">
-      <label>Town</label>
-      <input name="town" type="text" class="form-control" ng-model="login.user.address_line2" required>
-    </div>
-    <div ng-messages="login.registerForm.town.$error" role="alert">
-      <div class="ngMessages" ng-show="(login.registerForm.town.$touched)" ng-message="required">Please enter your town.</div>
-    </div>
-    <div class="form-group">
-      <label>City</label>
-      <input name="city" type="text" class="form-control" ng-model="login.user.address_line3" required>
-    </div>
-    <div ng-messages="login.registerForm.city.$error" role="alert">
-      <div class="ngMessages" ng-show="(login.registerForm.city.$touched)" ng-message="required">Please enter your city.</div>
-    </div>
-    <div class="form-group">
-      <label>Post Code</label>
-      <input name="postcode" type="text" class="form-control" ng-model="login.user.address_line4" required>
-    </div>
-    <div ng-messages="login.registerForm.postcode.$error" role="alert">
-      <div class="ngMessages" ng-show="(login.registerForm.postcode.$touched)" ng-message="required">Please enter your postcode.</div>
-    </div>
+      <div class="form-group">
+        <label>Street Name and Number</label>
+        <input name="street" type="text" class="form-control" ng-model="login.user.address_line1" required>
+      </div>
+      <div ng-messages="login.registerForm.street.$error" role="alert">
+        <div class="ngMessages" ng-show="(login.registerForm.street.$touched)" ng-message="required">Please enter your house number and street name.</div>
+      </div>
+      <div class="form-group">
+        <label>Town</label>
+        <input name="town" type="text" class="form-control" ng-model="login.user.address_line2" required>
+      </div>
+      <div ng-messages="login.registerForm.town.$error" role="alert">
+        <div class="ngMessages" ng-show="(login.registerForm.town.$touched)" ng-message="required">Please enter your town.</div>
+      </div>
+      <div class="form-group">
+        <label>City</label>
+        <input name="city" type="text" class="form-control" ng-model="login.user.address_line3" required>
+      </div>
+      <div ng-messages="login.registerForm.city.$error" role="alert">
+        <div class="ngMessages" ng-show="(login.registerForm.city.$touched)" ng-message="required">Please enter your city.</div>
+      </div>
+      <div class="form-group">
+        <label>Post Code</label>
+        <input name="postcode" type="text" class="form-control" ng-model="login.user.address_line4" required>
+      </div>
+      <div ng-messages="login.registerForm.postcode.$error" role="alert">
+        <div class="ngMessages" ng-show="(login.registerForm.postcode.$touched)" ng-message="required">Please enter your postcode.</div>
+      </div>
 
-    <div class="form-group">
-      <label>Town</label>
-      <input type="text" name="address_line3" ng-model="login.user.address_line3" class="form-control">
-    </div>
+      <div class="form-group">
+        <label for="base64">Profile Picture</label>
+        <input type="file" base64 name="base64" id="base64" ng-model="login.user.base64">
+      </div>
 
-    <div class="form-group">
-      <label>Password</label>
-      <input type="password" name="password" id="password" ng-model="login.user.password" class="form-control">
-    </div>
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" name="password" id="password" ng-model="login.user.password" class="form-control">
+      </div>
 
-    <div class="form-group">
-      <label>Password Confirmation</label>
-      <input type="password" name="password_confirmation" id="password_confirmation" ng-model="login.user.password_confirmation" class="form-control">
-    </div>
+      <div class="form-group">
+        <label>Password Confirmation</label>
+        <input type="password" name="password_confirmation" id="password_confirmation" ng-model="login.user.password_confirmation" class="form-control">
+      </div>
 
-    <button class="btn btn-primary">Register</button>
-  </form>
+      <button class="btn btn-primary">Register</button>
+    </form>
+  </div>
+
 </div>

@@ -16,7 +16,7 @@
     <div class="col-md-4 col-xs-12 usersJobInfo">
       <h4 class="jobsTitleProfile">Jobs Posted</h4>
       <div>
-        <div ng-repeat="jobsPosted in usersShow.user.jobs_posted"><img class="jobPhotoProfilePage" ng-src="{{ jobsPosted.image_src }}" alt="job main photo"><br><a ui-sref="jobsShow({ id: jobsPosted.id })">{{ jobsPosted.title }}</a><br>Number of Applicants: {{ jobsPosted.applicants.length }}</div><br>
+        <div ng-repeat="jobsPosted in usersShow.user.jobs_posted"><img class="jobPhotoProfilePage" ng-src="{{ jobsPosted.image_src }}" alt="job main photo"><br><a ui-sref="jobsShow({ id: jobsPosted.id })">{{ jobsPosted.title }}<br>Number of Applicants: {{ jobsPosted.applicants.length }}</a></div><br>
       </div>
     </div>
     <div class="col-md-4 col-xs-12 usersJobInfo">

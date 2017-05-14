@@ -5,8 +5,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/png" href="images/favicon.png">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700" rel="stylesheet">
     <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMBRc7S-fUkCbXazZbh-E06kbFfZFk-MQ&libraries=places,geometry"></script>
@@ -34,8 +32,8 @@
             <ul class="nav navbar-nav">
               <li ng-if="!main.isAuthenticated()"><a ui-sref="login">Login</a></li>
               <li ng-if="!main.isAuthenticated()"><a ui-sref="register">Register</a></li>
-              <li><a ui-sref="jobsIndex">Jobs</a></li>
-              <li><a ui-sref="jobsNew">Post a Job</a></li>
+              <li ng-if="main.isAuthenticated()"><a ui-sref="jobsIndex">Jobs</a></li>
+              <li ng-if="main.isAuthenticated()"><a ui-sref="jobsNew">Post a Job</a></li>
               <li ng-if="main.isAuthenticated()"><a ui-sref="usersShow({ id: main.currentUser.id })">My Profile</a></li>
               <li ng-if="main.isAuthenticated()"><a ng-click="main.logout()" href="#">Logout</a></li>
             </ul>

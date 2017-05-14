@@ -96,8 +96,46 @@ li {
   margin-left: 75px;
 }
 
+// login and register form styles
+
+.authenticationForm {
+  form {
+    margin-top: 27%;
+    padding: 40px;
+    position: absolute;
+    top: -50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+  }
+  input {
+    width: 50vw;
+  }
+  button {
+    margin: 10px 0 10px 0;
+  }
+}
+
+.loginForm {
+  form {
+    margin-top: 15%;
+    padding: 40px;
+    position: absolute;
+    top: -50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+  }
+  input {
+    width: 50vw;
+  }
+  button {
+    margin: 10px 0 10px 0;
+  }
+}
+
 .githublogin {
-  height: 50px;
+  height: 45px;
   width: auto;
   margin-left: -10px;
 }
@@ -242,6 +280,11 @@ select {
   h4 {
     text-align: center;
     margin: 15px 0 20px 0;
+  }
+  a {
+    margin-top: 10px;
+    font-family: 'Ubuntu', sans-serif;
+    letter-spacing: 1px;
   }
 }
 
