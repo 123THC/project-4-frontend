@@ -30,7 +30,7 @@
   </div>
   <div class="col-md-12 comments">
     <h4>Comments</h4>
-    <ul>
+    <ul class="commentsDisplay">
       <li ng-repeat="comment in jobsShow.job.comments">{{ comment.body }} - <strong>{{ comment.user.username }}</strong><button class="btn deleteBtn" ng-click="jobsShow.deleteComment(comment)" ng-if="main.isAuthenticated() && main.currentUser.id === comment.user.id">Delete</button></li>
     </ul>
   </div>
@@ -39,7 +39,7 @@
       <h4>Add Comment</h4>
       <form ng-submit="jobsShow.addComment()">
         <textarea class="commentBox" type="text" name="body" ng-model="jobsShow.comment.body"></textarea>
-        <button class="btn mainBtn">Post Comment</button>
+        <button class="btn mainBtn commentBtn">Post Comment</button>
       </form>
     </div>
     <div class="col-md-6" ng-if="main.currentUser.id == jobsShow.job.postedById">

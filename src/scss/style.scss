@@ -207,11 +207,18 @@ select {
 }
 
 .commentBox {
-  width: 50%;
+  width: 85%;
   height: 100px;
   display: block;
   margin-bottom: 10px;
+}
 
+.commentBtn {
+  width: 85%;
+}
+
+.commentsDisplay {
+  margin-left: -3.5%;
 }
 
 .ngMessages {
@@ -381,6 +388,7 @@ a {
 
 .acceptBtn {
   margin-bottom: 10px;
+  margin-left: 20px;
 }
 
 .paymentForm {
