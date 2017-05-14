@@ -19,16 +19,16 @@ function MainCtrl($rootScope, $state, $auth) {
     if($auth.getPayload()) vm.currentUser = $auth.getPayload();
   });
 
-  // const protectedStates = ['jobsNew', 'jobsEdit', 'usersNew', 'usersEdit', 'jobsIndex'];
+  const protectedStates = ['jobsNew', 'jobsEdit', 'usersNew', 'usersEdit', 'jobsIndex'];
 
-  // $rootScope.$on('$stateChangeStart', (e, toState) => {
-  //   if((!$auth.isAuthenticated() && protectedStates.includes(toState.name))) {
-  //     e.preventDefault();
-  //     $state.go('login');
-  //     vm.message = 'You must be logged in to access this page.';
-  //   }
-  //   vm.pageName = toState.name;
-  // });
+  $rootScope.$on('$stateChangeStart', (e, toState) => {
+    if((!$auth.isAuthenticated() && protectedStates.includes(toState.name))) {
+      e.preventDefault();
+      $state.go('login');
+      vm.message = 'You must be logged in to access this page.';
+    }
+    vm.pageName = toState.name;
+  });
 
   function logout() {
     $auth.logout();
