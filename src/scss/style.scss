@@ -99,17 +99,10 @@ li {
 // login and register form styles
 
 .authenticationForm {
-  form {
-    margin-top: 27%;
     padding: 40px;
-    position: absolute;
-    top: -50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%)
-  }
+    margin-left: 20%;
   input {
-    width: 50vw;
+    width: 55vw;
   }
   button {
     margin: 10px 0 10px 0;
@@ -117,15 +110,8 @@ li {
 }
 
 .loginForm {
-  form {
-    margin-top: 15%;
-    padding: 40px;
-    position: absolute;
-    top: -50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%)
-  }
+  padding: 40px;
+  margin-left: 20%;
   input {
     width: 50vw;
   }
@@ -252,14 +238,6 @@ select {
   padding-left: 0;
 }
 
-.btn {
-  display: grid;
-  background-color: #D3D3D3;
-  border: 1px solid black;
-  color: black;
-}
-
-
 .profilePicture {
   height: 280px;
   width: 250px;
@@ -282,7 +260,6 @@ select {
     margin: 15px 0 20px 0;
   }
   a {
-    margin-top: 10px;
     font-family: 'Ubuntu', sans-serif;
     letter-spacing: 1px;
   }
@@ -293,6 +270,7 @@ select {
   border-radius: 4px;
   box-shadow: 0 0 15px 0 rgba(0,0,0,0.3);
   margin-top: 25px;
+  margin-bottom: 12px;
   width: 300px;
   text-align: center;
 }
@@ -353,9 +331,33 @@ a {
   color: black;
 }
 
-.btn-primary:hover {
-  color: #fff;
+// button styles
+
+.btn {
+  display: grid;
+  background-color: #D3D3D3;
+  border: 1px solid black;
+  color: white;
+}
+
+.mainBtn {
   background-color: black;
+  opacity: 0.7;
+}
+
+.mainBtn:hover {
+  color: black;
+  background-color: white;
+}
+
+.deleteBtn {
+  background-color: black;
+  opacity: 0.7;
+}
+
+.deleteBtn:hover {
+  color: red;
+  background-color: white;
 }
 
 .profilePictureJobsShow {

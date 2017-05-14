@@ -11,8 +11,8 @@
       <h4>Description</h4>
       <p>{{jobsShow.job.description }}</p>
       <div ng-if="main.currentUser.id != jobsShow.job.postedById">
-        <button class="btn btn-primary" ng-click="jobsShow.toggleApplied()" ng-if="!jobsShow.hasApplied() && main.isAuthenticated()">Apply For Job</button>
-        <button class="btn btn-danger" ng-click="jobsShow.toggleApplied()" ng-if="jobsShow.hasApplied() && main.isAuthenticated()">Withdraw Application</button>
+        <button class="btn mainBtn" ng-click="jobsShow.toggleApplied()" ng-if="!jobsShow.hasApplied() && main.isAuthenticated()">Apply For Job</button>
+        <button class="btn deleteBtn" ng-click="jobsShow.toggleApplied()" ng-if="jobsShow.hasApplied() && main.isAuthenticated()">Withdraw Application</button>
       </div>
     </div>
     <div class="col-md-6 details">
@@ -31,7 +31,7 @@
   <div class="col-md-12 comments">
     <h4>Comments</h4>
     <ul>
-      <li ng-repeat="comment in jobsShow.job.comments">{{ comment.body }} - <strong>{{ comment.user.username }}</strong><button class="btn btn-danger" ng-click="jobsShow.deleteComment(comment)" ng-if="main.isAuthenticated() && main.currentUser.id === comment.user.id">Delete</button></li>
+      <li ng-repeat="comment in jobsShow.job.comments">{{ comment.body }} - <strong>{{ comment.user.username }}</strong><button class="btn deleteBtn" ng-click="jobsShow.deleteComment(comment)" ng-if="main.isAuthenticated() && main.currentUser.id === comment.user.id">Delete</button></li>
     </ul>
   </div>
   <div class="row">
@@ -39,19 +39,19 @@
       <h4>Add Comment</h4>
       <form ng-submit="jobsShow.addComment()">
         <textarea class="commentBox" type="text" name="body" ng-model="jobsShow.comment.body"></textarea>
-        <button class="btn btn-primary">Post Comment</button>
+        <button class="btn mainBtn">Post Comment</button>
       </form>
     </div>
     <div class="col-md-6" ng-if="main.currentUser.id == jobsShow.job.postedById">
       <h4>Current Applicant Pool</h4>
       <ul>
         <li ng-repeat="applicant in jobsShow.job.applicants"><a ui-sref="usersShow({ id: applicant.id })" class="profileViewPool"><img class="profilePictureJobsShow" ng-src="{{ applicant.image_src }}">{{ applicant.username }}</a>
-        <button ui-sref="applicantSelection({ id: jobsShow.job.id, userid: applicant.id })" class="btn btn-primary">Accept {{applicant.username }}</button></li>
+        <button ui-sref="applicantSelection({ id: jobsShow.job.id, userid: applicant.id })" class="btn mainBtn">Accept {{applicant.username }}</button></li>
       </ul>
       <div>
         <div ng-if="main.currentUser.id == jobsShow.job.postedById">
-          <a ui-sref="jobsEdit({ id: jobsShow.job.id })" class="btn btn-primary">Edit Job</a><br>
-          <a ng-click="jobsShow.delete()" class="btn btn-danger">Delete Job</a>
+          <a ui-sref="jobsEdit({ id: jobsShow.job.id })" class="btn mainBtn">Edit Job</a><br>
+          <a ng-click="jobsShow.delete()" class="btn deleteBtn">Delete Job</a>
         </div>
       </div>
     </div>

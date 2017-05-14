@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 
 <div class="container" ng-controller="PaymentController as payment">
-  <h1>Stripe Payment Form</h1>
   <form class="form" name="payment.Form" ng-hide="payment.paymentSuccessful" ng-submit="payment.pay()">
     <div class="row">
       <div class="col-sm-8">
@@ -60,12 +59,11 @@
         </div>
       </div>
     </div>
-    <button class="btn btn-primary" ng-disabled="(payment.Form.$invalid||payment.Form.$submitted)">Make Payment</button>
+    <button class="btn mainBtn" ng-disabled="(payment.Form.$invalid||payment.Form.$submitted)">Make Payment</button>
   </form>
   <div ng-show="payment.paymentSuccessful">
     <h2>Thank you!</h2>
     <p>Your payment for &pound;{{payment.amount}} was successful</p>
-    <p>You will recieve a confirmation email shortly</p>
-    <button class="btn btn-primary" ng-click="payment.reset()">Make Another Payment</button>
+    <button class="btn mainBtn" ng-click="payment.reset()">Make Another Payment</button>
   </div>
 </div>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<div class="container">
+<div class="container authenticationForm">
   <form ng-submit="usersEdit.update()">
     <div class="form-group">
       <label>Username</label>
@@ -8,11 +8,6 @@
     <div class="form-group">
       <label>Email</label>
       <input type="text" name="email" id="email" ng-model="usersEdit.user.email" class="form-control">
-    </div>
-
-    <div class="form-group">
-      <label for="base64">Profile Picture</label>
-      <input type="file" base64 name="base64" id="base64" ng-model="usersEdit.user.base64">
     </div>
 
     <div class="form-group">
@@ -35,7 +30,12 @@
       <input type="text" name="address_line4" id="address_line4" ng-model="usersEdit.user.address_line4" class="form-control" placeholder="Leave blank to keep the same">
     </div>
 
-    <button class="btn btn-primary">Update Your Profile</button>
+    <div class="form-group">
+      <label for="base64">Profile Picture</label>
+      <input type="file" base64 name="base64" id="base64" ng-model="usersEdit.user.base64">
+    </div>
+
+    <button class="btn mainBtn">Update Your Profile</button>
   </form>
 
 </div>

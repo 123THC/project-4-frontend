@@ -1,6 +1,4 @@
 <!DOCTYPE html>
-
-
 <div class="container">
   <div class="row">
     <div class="col-md-6 userDetailsSelection">
@@ -8,13 +6,19 @@
       <p>{{ jobsSelection.chosenApplicant.location }}</p>
       <img class="displayPictureSelection" ng-src="{{ jobsSelection.chosenApplicant.image_src }}">
 
-      <a ng-hide="jobsSelection.job.chosen_applicant.id === jobsSelection.chosenApplicant.id" ng-click="jobsSelection.selectApplicant()" class="btn btn-primary">Confirm {{ jobsSelection.chosenApplicant.username }} To Do Job</a>
-      <a ng-if="jobsSelection.job.chosen_applicant.id === jobsSelection.chosenApplicant.id" class="btn btn-primary" ui-sref="payment({ id: jobsSelection.job.id })">Make Payment</a>
+      <a ng-hide="jobsSelection.job.chosen_applicant.id === jobsSelection.chosenApplicant.id" ng-click="jobsSelection.selectApplicant()" class="btn mainBtn">Confirm {{ jobsSelection.chosenApplicant.username }} To Do Job</a>
+      <a ng-if="jobsSelection.job.chosen_applicant.id === jobsSelection.chosenApplicant.id" class="btn mainBtn" ui-sref="payment({ id: jobsSelection.job.id })">Make Payment</a>
     </div>
     <div class="col-md-6 jobDetailsSelection">
       <h4>{{ jobsSelection.job.title }}</h4>
-      <p>{{ jobsSelection.job.address_line1 }}</p>
+      <h5>Pay</h5>
+      <p>{{ jobsSelection.job.hourly_rate | currency: '£' }} p/h</p><hr>
+      <h5>Date</h5>
+      <p>{{ jobsSelection.job.date }}</p><hr>
+      <h5>Address</h5>
+      <p>{{ jobsSelection.job.address_line2 }}</p>
       <p>{{ jobsSelection.job.address_line3 }}</p>
+      <p>{{ jobsSelection.job.address_line4 }}</p><hr>
       <img class="displayPictureSelection" ng-src="{{ jobsSelection.job.image_src }}">
     </div>
   </div>
