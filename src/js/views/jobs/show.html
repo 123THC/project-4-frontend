@@ -45,8 +45,8 @@
     <div class="col-md-6" ng-if="main.currentUser.id == jobsShow.job.postedById">
       <h4>Current Applicant Pool</h4>
       <ul class="applicantPool">
-        <li ng-repeat="applicant in jobsShow.job.applicants"><a ui-sref="usersShow({ id: applicant.id })" class="profileViewPool"><img class="profilePictureJobsShow" ng-src="{{ applicant.image_src }}">{{ applicant.username }}</a>
-        <button ui-sref="applicantSelection({ id: jobsShow.job.id, userid: applicant.id })" class="btn mainBtn">Accept {{applicant.username }}</button></li>
+        <li ng-repeat="applicant in jobsShow.job.applicants"><a ui-sref="usersShow({ id: applicant.id })" class="profileViewPool"><img class="profilePictureJobsShow" ng-src="{{ applicant.image_src }}"><p>{{ applicant.username }}</p></a>
+        <button ui-sref="applicantSelection({ id: jobsShow.job.id, userid: applicant.id })" class="btn mainBtn acceptBtn">Accept {{applicant.username }}</button></li>
       </ul>
       <div>
         <div ng-if="main.currentUser.id == jobsShow.job.postedById">

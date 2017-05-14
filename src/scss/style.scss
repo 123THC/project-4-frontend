@@ -370,8 +370,17 @@ a {
 }
 
 .applicantPool {
-  display: inline;
+  margin-right: 10%;
   padding: 10px;
+  li {
+    list-style: none;
+    display: inline-block;
+    text-align: center;
+  }
+}
+
+.acceptBtn {
+  margin-bottom: 10px;
 }
 
 .paymentForm {
