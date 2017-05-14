@@ -303,6 +303,7 @@ body {
 .userDetailsSelection {
   margin-top: 50px;
   height: 300px;
+  text-align: center;
 }
 
 .jobDetailsSelection {
@@ -313,8 +314,10 @@ body {
 .displayPictureSelection {
   height: 150px;
   border-radius: 4px;
+  width: 175px;
+  margin: 15px;
+  margin-left: 0%;
   box-shadow: 0 0 15px 0 rgba(0,0,0,0.3);
-  width: auto;
 }
 
 .homepagePicture {
@@ -369,6 +372,10 @@ a {
 .applicantPool {
   display: inline;
   padding: 10px;
+}
+
+.paymentForm {
+  margin-top: 50px;
 }
 
 .jobsShowImage {
