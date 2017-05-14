@@ -5,6 +5,7 @@
       <h4>{{ jobsSelection.chosenApplicant.username }}</h4>
       <p>{{ jobsSelection.chosenApplicant.location }}</p>
       <img class="displayPictureSelection" ng-src="{{ jobsSelection.chosenApplicant.image_src }}">
+      <img class="displayPictureSelection" ng-src="{{ jobsSelection.job.image_src }}">
 
       <a ng-hide="jobsSelection.job.chosen_applicant.id === jobsSelection.chosenApplicant.id" ng-click="jobsSelection.selectApplicant()" class="btn mainBtn">Confirm {{ jobsSelection.chosenApplicant.username }} To Do Job</a>
       <a ng-if="jobsSelection.job.chosen_applicant.id === jobsSelection.chosenApplicant.id" class="btn mainBtn" ui-sref="payment({ id: jobsSelection.job.id })">Make Payment</a>
@@ -19,7 +20,6 @@
       <p>{{ jobsSelection.job.address_line2 }}</p>
       <p>{{ jobsSelection.job.address_line3 }}</p>
       <p>{{ jobsSelection.job.address_line4 }}</p><hr>
-      <img class="displayPictureSelection" ng-src="{{ jobsSelection.job.image_src }}">
     </div>
   </div>
 </div>

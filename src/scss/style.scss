@@ -361,9 +361,14 @@ a {
 }
 
 .profilePictureJobsShow {
-  height: 80px;
-  width: auto;
+  height: 60px;
+  width: 60px;
   border-radius: 3px;
+}
+
+.applicantPool {
+  display: inline;
+  padding: 10px;
 }
 
 .jobsShowImage {
